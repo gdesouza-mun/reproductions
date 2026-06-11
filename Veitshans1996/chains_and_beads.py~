@@ -1,0 +1,33 @@
+import math
+import numpy as np
+
+
+
+class Bead():
+    def __init__(self, mass, hydro, *args):
+        self.mass=mass
+        self.hydro=hydro
+
+        if len(args)==3:
+            self.x_coord=args[0]
+            self.y_coord=args[1]
+            self.z_coord=args[2]
+
+        if len(args)==1:
+            self.x_coord, self.y_coord, self.z_coord = args[0]
+
+    # def __init__(self, mass, hydro, vec_coord):
+    #     __init__(mass, hydro, vec_coord[0], vec_coord[1], vec_coord[2])
+
+    def __str__(self):
+        return f" mass = {self.mass} \n hydro {self.hydro} \n coords ({self.x_coord},{self.y_coord},{self.z_coord})"
+
+
+
+bead_test = Bead(1, "F", (1,2,3))
+
+print(bead_test)
+
+
+# class Chain():
+#     def

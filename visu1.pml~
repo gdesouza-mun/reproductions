@@ -1,0 +1,14 @@
+fetch 1LYZ, async=0
+
+hide everything
+show cartoon
+
+color red, ss H
+color yellow, ss S
+color green, ss L+''
+
+bg_color black
+
+stereo anaglyph
+set stereo_angle, 6
+stereo on
