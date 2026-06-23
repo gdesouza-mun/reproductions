@@ -173,6 +173,23 @@ class Chain():
 
         return chain_str
 
+    def get_center_of_mass(self):
+
+        CM = [0,0,0]
+        total_mass=0
+        for bead in self.beads:
+            CM+=bead.mass*bead.coords
+            total_mass+=bead.mass
+
+        return CM/total_mass
+
+    def centralize(self, center_pos=[0,0,0]):
+        shift = -self.get_center_of_mass()+center_pos
+
+        for bead in self.beads:
+            bead.coords = bead.coords+shift
+
+
     def plot(self, ax, resolution=32, bead_scale=0.1, **kwargs):
         for bead in self.beads:
             bead.plot(ax, resolution, bead_scale, **kwargs)
@@ -204,12 +221,13 @@ class Hydro_Chain(Chain):
         self.theta_0 = 1.8326 #rad
 
         self.dihedral_forces = self.forces
+        self.fill_all_forces()
 
 
     def fill_bond_forces(self):
 
-        for k in range(len(chain.chain_vector)):
-            u = chain.chain_vector[k]
+        for k in range(len(self.chain_vector)):
+            u = self.chain_vector[k]
             u_abs = LA.norm(u)
             u_norm = u/u_abs
 
@@ -235,7 +253,7 @@ class Hydro_Chain(Chain):
 
     def fill_angle_forces(self):
 
-        for k in range(len(chain.bond_angles)):
+        for k in range(len(self.bond_angles)):
 
             theta = self.bond_angles[k]
             u_0 = self.chain_vector[k]
@@ -258,7 +276,7 @@ class Hydro_Chain(Chain):
         return 0.5*(A*np.sin(theta) + B*np.sin(3*theta))
 
     def fill_dihedral_forces(self):
-        for k in range(len(chain.dihedral_angles)):
+        for k in range(len(self.dihedral_angles)):
 
             BA_0 = self.bond_angles[k]
             BA_1 = self.bond_angles[k+1]
@@ -271,7 +289,7 @@ class Hydro_Chain(Chain):
 
             hydro_types = ""
             for jdx in range(4):
-                hydro_types+=chain[k+jdx].hydro
+                hydro_types+=self[k+jdx].hydro
 
             A = 1.2*self.e_h
             B=A
@@ -305,6 +323,14 @@ class Hydro_Chain(Chain):
             self.dihedral_forces[k+1] = -f_0-f_2-f_3
             self.dihedral_forces[k+2] = f_2
             self.dihedral_forces[k+3] = f_3
+
+
+    def fill_all_forces(self):
+        self.fill_bond_forces()
+        self.fill_angle_forces()
+        self.fill_dihedral_forces()
+
+        self.forces = self.bond_forces+self.bond_angle_forces+self.dihedral_forces
 
 
 
@@ -439,37 +465,38 @@ def bead_gradient(chain, bead_idx, h_step=0.001, a=1.7, e_h=1, lambda_std=10):
 #                                TEST FUNCTIONS
 # ============================================================================= #
 
-a=1.8
-beads = [
-    Bead(1.0, "N", a*0,0,-1),
-    Bead(0.5, "N", a*1,2,10),
-    Bead(1.2, "B", a*2, 0,1),
-    Bead(1.0, "L", a*3,1,2),
-    Bead(1.0, "B", a*4,-1,0),
-    Bead(1.0, "L", a*5,-2,1),
-    Bead(1.0, "B", a*6,2,2),
-    Bead(1.0, "B", a*7,1,2),
-    Bead(1.0, "B", a*8,0,1),
-    Bead(1.0, "L", a*9,-2,-1),
-    Bead(1.0, "B", a*10,0,0) ]
 
-chain=Hydro_Chain(beads, avg_bond_length=a)
+def test():
+    a=1.8
+    beads = [
+        Bead(1.0, "N", a*0,0,-1),
+        Bead(0.5, "N", a*1,2,10),
+        Bead(1.2, "B", a*2, 0,1),
+        Bead(1.0, "L", a*3,1,2),
+        Bead(1.0, "B", a*4,-1,0),
+        Bead(1.0, "L", a*5,-2,1),
+        Bead(1.0, "B", a*6,2,2),
+        Bead(1.0, "B", a*7,1,2),
+        Bead(1.0, "B", a*8,0,1),
+        Bead(1.0, "L", a*9,-2,-1),
+        Bead(1.0, "B", a*10,0,0) ]
 
-chain.fill_bond_forces()
-chain.fill_angle_forces()
-chain.fill_dihedral_forces()
+    chain=Hydro_Chain(beads, avg_bond_length=a)
 
-#print(len(chain))
-#print(chain.bond_forces)
+    # chain.fill_bond_forces()
+    # chain.fill_angle_forces()
+    # chain.fill_dihedral_forces()
 
-#print(chain.bond_angle_forces)
-print(chain.dihedral_forces)
-# print(len(chain.chain_vector))
-# print(len(chain.bond_angles))
-# print(len(chain.dihedral_angles))
+    #print(len(chain))
+    print(chain.bond_forces)
+    print(chain.bond_angle_forces)
+    print(chain.dihedral_forces)
+    print(chain.forces)
+    # print(len(chain.bond_angles))
+    # print(len(chain.dihedral_angles))
 
 
-# print(bead_gradient(chain, 2))
+    # print(bead_gradient(chain, 2))
 
 
 # Implement Random Force

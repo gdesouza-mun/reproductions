@@ -1,0 +1,15 @@
+from chains_and_beads import *
+
+#def to impose periodic boundaries on a bead
+
+class Box():
+    def __init__(size=60):
+        self.size=size
+
+    def periodic_boundaries_on_bead(bead):
+        bead.coords = bead.coords % self.size
+
+
+bead = Beads(1.0, "N", 100, -23.5, 14)
+print(bead)
+#Def to impose periodi cbondaries on a chain
