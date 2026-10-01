@@ -1,0 +1,13 @@
+(undo-tree-save-format-version . 1)
+"7efe3bee0079393c633c38f757fcc0717457b015"
+[nil nil nil nil (27325 1896 689423 105000) 0 nil]
+([nil nil ((#("conda create -n physics-lab -y \\
+      python=3.13 \\
+      jupyterlab \\
+      numpy \\
+      scipy \\
+      pandas \\
+      matplotlib \\
+      uncertainties" 0 31 (fontified t) 31 32 (face sh-escaped-newline fontified t) 32 39 (fontified t) 39 45 (face font-lock-variable-name-face fontified t) 45 51 (fontified t) 51 52 (face sh-escaped-newline fontified t) 52 70 (fontified t) 70 71 (face sh-escaped-newline fontified t) 71 84 (fontified t) 84 85 (face sh-escaped-newline fontified t) 85 98 (fontified t) 98 99 (face sh-escaped-newline fontified t) 99 113 (fontified t) 113 114 (face sh-escaped-newline fontified t) 114 132 (fontified t) 132 133 (face sh-escaped-newline fontified t) 133 153 (fontified t)) . 14) (undo-tree-id0 . -153) (undo-tree-id1 . -153) (undo-tree-id2 . -153) (undo-tree-id3 . -153) (undo-tree-id4 . -153) (undo-tree-id5 . -153) (undo-tree-id6 . -153) (undo-tree-id7 . -153) (t 27325 1831 261604 289000)) nil (27325 1896 689422 19000) 0 nil])
+([nil current ((167 . 169) (148 . 150) (133 . 135) (119 . 121) (105 . 107) (86 . 88) (66 . 68) (nil rear-nonsticky nil 167 . 168) (nil fontified nil 14 . 168) (14 . 168)) nil (27325 1896 689344 251000) 0 nil])
+nil

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+conda create -n physics-lab -y -c conda-forge \
+      python=3.13 \
+      jupyterlab \
+      numpy \
+      scipy \
+      pandas \
+      matplotlib \
+      uncertainties
+
+echo "Created environment: physics-lab"
+echo "Activate with: conda activate physics-lab"

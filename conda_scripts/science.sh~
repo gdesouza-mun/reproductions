@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ENV_NAME="science"
+
+conda create -n physics-lab -y \
+      python=3.13 \
+      jupyterlab \
+      numpy \
+      scipy \
+      pandas \
+      matplotlib \
+      uncertainties
+
+
+echo "Environment '$ENV_NAME' created."
+echo "Activate with:"
+echo "    conda activate $ENV_NAME"
+echo "Then run:"
+echo "    jupyter lab"
