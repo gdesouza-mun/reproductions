@@ -1,0 +1,8 @@
+#Beaker weight 52.20 pm 0.01 g, tube length 92.85 pm 0.05 cm
+#Rel Uncertainty P 0.05, Unc time = 0.01, weight unc 0.01g
+P1cm,P2cm,time,weight
+93,3.1,35.38,67.58
+71,2.5,42.36,66.43
+56.8,1.8,42.56,63.34
+49.5, 1.2, 45.75,62.47
+31.5,0.6,45.17,58.90
