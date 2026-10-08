@@ -9,5 +9,19 @@
       pandas \\
       matplotlib \\
       uncertainties" 0 31 (fontified t) 31 32 (face sh-escaped-newline fontified t) 32 39 (fontified t) 39 45 (face font-lock-variable-name-face fontified t) 45 51 (fontified t) 51 52 (face sh-escaped-newline fontified t) 52 70 (fontified t) 70 71 (face sh-escaped-newline fontified t) 71 84 (fontified t) 84 85 (face sh-escaped-newline fontified t) 85 98 (fontified t) 98 99 (face sh-escaped-newline fontified t) 99 113 (fontified t) 113 114 (face sh-escaped-newline fontified t) 114 132 (fontified t) 132 133 (face sh-escaped-newline fontified t) 133 153 (fontified t)) . 14) (undo-tree-id0 . -153) (undo-tree-id1 . -153) (undo-tree-id2 . -153) (undo-tree-id3 . -153) (undo-tree-id4 . -153) (undo-tree-id5 . -153) (undo-tree-id6 . -153) (undo-tree-id7 . -153) (t 27325 1831 261604 289000)) nil (27325 1896 689422 19000) 0 nil])
-([nil current ((167 . 169) (148 . 150) (133 . 135) (119 . 121) (105 . 107) (86 . 88) (66 . 68) (nil rear-nonsticky nil 167 . 168) (nil fontified nil 14 . 168) (14 . 168)) nil (27325 1896 689344 251000) 0 nil])
+([nil nil ((167 . 169) (148 . 150) (133 . 135) (119 . 121) (105 . 107) (86 . 88) (66 . 68) (nil rear-nonsticky nil 167 . 168) (nil fontified nil 14 . 168) (14 . 168)) nil (27325 1896 689344 251000) 0 nil])
+([nil nil ((#("#!/bin/bash
+
+conda create -n physics-lab -y -c conda-forge \\
+      python=3.13 \\
+      jupyterlab \\
+      numpy \\
+      scipy \\
+      pandas \\
+      matplotlib \\
+      uncertainties
+
+echo \"Created environment: physics-lab\"
+echo \"Activate with: conda activate physics-lab\"" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 7 (face font-lock-comment-face fontified t) 7 11 (face font-lock-keyword-face fontified t) 11 12 (face font-lock-comment-face fontified t) 12 59 (fontified t) 59 60 (face sh-escaped-newline fontified t) 60 67 (fontified t) 67 73 (face font-lock-variable-name-face fontified t) 73 79 (fontified t) 79 80 (face sh-escaped-newline fontified t) 80 98 (fontified t) 98 99 (face sh-escaped-newline fontified t) 99 112 (fontified t) 112 113 (face sh-escaped-newline fontified t) 113 126 (fontified t) 126 127 (face sh-escaped-newline fontified t) 127 141 (fontified t) 141 142 (face sh-escaped-newline fontified t) 142 160 (fontified t) 160 161 (face sh-escaped-newline fontified t) 161 183 (fontified t) 183 187 (face font-lock-builtin-face fontified t) 187 188 (fontified t) 188 222 (face font-lock-string-face fontified t) 222 223 (fontified t) 223 227 (face font-lock-builtin-face fontified t) 227 228 (fontified t) 228 271 (face font-lock-string-face fontified t)) . 1) (undo-tree-id0 . -271) (undo-tree-id1 . -181) (undo-tree-id2 . -181) (undo-tree-id3 . -181) (undo-tree-id4 . -181) (undo-tree-id5 . -181) (undo-tree-id6 . -181) (undo-tree-id7 . -181) (undo-tree-id8 . -271) (undo-tree-id9 . -271) (undo-tree-id10 . -271) (undo-tree-id11 . -271) (undo-tree-id12 . -271) (undo-tree-id13 . -271) (undo-tree-id14 . -271) (undo-tree-id15 . -271) (undo-tree-id16 . -181) (undo-tree-id17 . -271) (undo-tree-id18 . -271) (undo-tree-id19 . -271) (undo-tree-id20 . -271) (undo-tree-id21 . -182) (undo-tree-id22 . -182) (undo-tree-id23 . -162) (undo-tree-id24 . -143) (undo-tree-id25 . -128) (undo-tree-id26 . -114) (undo-tree-id27 . -100) (undo-tree-id28 . -81) (undo-tree-id29 . -61) (undo-tree-id30 . -13) (undo-tree-id31 . -12) (t 27334 9242 745700 232000)) nil (27334 9265 338240 203000) 0 nil])
+([nil current ((1 . 272)) nil (27334 9265 338175 137000) 0 nil])
 nil
