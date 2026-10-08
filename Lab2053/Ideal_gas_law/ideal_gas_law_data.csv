@@ -1,0 +1,6 @@
+Measurement,Bath,Bath_Temperature_C,Temperature_Uncertainty_C,Gauge_Pressure_kPa,Gauge_Uncertainty_kPa,Atmospheric_Pressure_kPa,Pt_Resistance_ohm,Resistance_Uncertainty_ohm
+1,Room temperature,21.5,0.5,330.7,0.5,101.0,108.3,0.1
+2,Liquid nitrogen,-195.8,1.0,12.1,0.5,101.0,20.6,0.1
+3,Dry ice,-78.5,1.0,184.3,0.5,101.0,69.0,0.1
+4,Ice-water mixture,0.0,0.2,298.9,0.5,101.0,100.0,0.1
+5,Boiling water,99.7,0.5,444.7,0.5,101.0,138.3,0.1
